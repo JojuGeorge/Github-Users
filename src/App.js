@@ -7,11 +7,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/Github-Users'>
-            <Route index  element={<Dashboard/>}/>
-           <Route path="login" element={<Login/>}/>
-           <Route path="*" element={<Error/>}/>
-        </Route>
+          <Route path="/"  element={<Dashboard/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="*" element={<Error/>}/>
       </Routes>
 
     </div>
