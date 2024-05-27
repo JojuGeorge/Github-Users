@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' exact={true} element={<Dashboard/>}/>
+        <Route path='/' element={<Dashboard/>} >
+          <Route path='Github-Users' element={<Dashboard/>}/>
+        </Route>
         <Route path="/login" element={<Login/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
-      {/* <Dashboard></Dashboard> */}
-       {/* <Login/> */}
-      {/* <Error/> */}
+
     </div>
   );
 }
