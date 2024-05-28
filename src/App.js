@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import {Dashboard, Login, Error} from './pages'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
   return (

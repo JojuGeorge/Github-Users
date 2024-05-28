@@ -2,8 +2,7 @@ import React, {useContext} from 'react'
 import { GithubContext } from '../context/context'
 import {GoRepo, GoCodeSquare} from 'react-icons/go';
 import {FiUserPlus, FiUsers, FiuserPlus} from 'react-icons/fi';
-
-
+import {Row, Col, Card} from 'react-bootstrap'
 
 function Info() {
   const {githubUser} = useContext(GithubContext);
@@ -39,24 +38,32 @@ function Info() {
 
   return (
     <section>
-      <div>
+      <Row>
         {
           items.map(item => {
             return <Item key={item.id} {...item}></Item>
           })
         }
-      </div>
+      </Row>
     </section>
   )
 }
 
 const Item = ({icon, label, value})=>{
   return (
-    <article>
-      <span>{icon}</span>
-      <h3>{value}</h3>
-      <p>{label}</p>
-    </article>
+    <Col>
+      <Card body>
+        <Row>
+          <Col>    
+            <span className='fs-2'>{icon}</span>
+          </Col>
+          <Col>
+            <h3>{value}</h3>
+            <p>{label}</p>
+          </Col>
+        </Row>
+      </Card>
+    </Col>
   )
 }
 
