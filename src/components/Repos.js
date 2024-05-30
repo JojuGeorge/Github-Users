@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { ExampleChart, Column3D, Pie3D, Bar3D, Doughnut2D } from "./Charts";
+import { ExampleChart, Column2D, Pie2D, Bar2D, Doughnut2D } from "./Charts";
 import { GithubContext } from "../context/context";
+import { Row, Col } from "react-bootstrap";
 
 function Repos() {
   const { repos } = useContext(GithubContext);
@@ -38,15 +39,41 @@ function Repos() {
     })
     .slice(0, 5);
 
-  console.log(mostUsed);
-  console.log(mostStars);
+  // stars, forks
+  let { stars, forks } = repos.reduce(
+    (total, item) => {
+      const { stargazers_count, name, forks } = item;
+
+      total.stars[stargazers_count] = { label: name, value: stargazers_count };
+      total.forks[forks] = { label: name, value: forks };
+
+      return total;
+    },
+    { stars: {}, forks: {} }
+  );
+
+  stars = Object.values(stars).slice(-5).reverse();
+  forks = Object.values(forks).slice(-5).reverse();
 
   return (
     <div>
       <section>
-        <Pie3D data={mostUsed}></Pie3D>
-        <div></div>
-        <Doughnut2D data={mostStars} />
+        <Row>
+          <Col>
+            <Pie2D data={mostUsed} />
+          </Col>
+          <Col>
+            <Column2D data={stars} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Doughnut2D data={mostStars} />
+          </Col>
+          <Col>
+            <Bar2D data={forks} />
+          </Col>
+        </Row>
       </section>
     </div>
   );
