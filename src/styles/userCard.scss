@@ -1,0 +1,31 @@
+@import "variables";
+
+.userCard-wrapper {
+  @media (min-width: 640px) {
+    margin: 1rem;
+  }
+}
+
+.userCard-row {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
+.userCard-col {
+  img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+.userCard-info {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
+  row-gap: 0.3rem;
+  align-items: center;
+}

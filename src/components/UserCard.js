@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { GithubContext } from "../context/context";
 import { Row, Col } from "react-bootstrap";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
+import "../styles/css/userCard.css";
 
 function UserCard() {
   const { githubUser } = useContext(GithubContext);
@@ -18,40 +19,38 @@ function UserCard() {
   } = githubUser;
 
   return (
-    <div>
+    <div className="userCard-wrapper">
       <div>
-        <Row>
-          <Col>
+        <span className="userCard-row">
+          <span className="userCard-col">
             <img
               src={avatar_url}
               alt={name}
-              className="img-fluid img-thumbnail rounded-circle mb-2"
-              style={{ width: "80px", height: "80px" }}
+              className="img-fluid img-thumbnail rounded-circle mb-2 userCard-img"
             />
-            <div>
-              <h4>{name}</h4>
-              <p>@{twitter_username || "John Doe"}</p>
-            </div>
-          </Col>
-          <Col>
-            <a href={html_url}>follow</a>
-          </Col>
-        </Row>
+          </span>
+          <span className="userCard-col">
+            <h4>{name || "John Doe"}</h4>
+            <p>@{twitter_username || "John Doe"}</p>
+          </span>
+          <span className="userCard-col">
+            <a href={html_url} className="btn btn-outline-primary ">
+              follow
+            </a>
+          </span>
+        </span>
       </div>
-      <p>{bio}</p>
 
-      <div>
-        <p>
-          {" "}
+      <div className="userCard-info">
+        <span>{bio} </span>
+        <span>
           <MdBusiness />
-          {company || "indie"}{" "}
-        </p>
-        <p>
-          {" "}
-          <MdLocationOn /> {location || "earth"}{" "}
-        </p>
+          {company || "indie"}
+        </span>
+        <span>
+          <MdLocationOn /> {location || "earth"}
+        </span>
         <a href={`https://${blog}`}>
-          {" "}
           <MdLink /> {blog}{" "}
         </a>
       </div>

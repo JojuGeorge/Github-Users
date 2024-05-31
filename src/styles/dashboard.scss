@@ -1,0 +1,7 @@
+@import "variables";
+
+.dashboard-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 4fr 8fr;
+  row-gap: 1rem;
+}

@@ -7,7 +7,10 @@ function Followers() {
 
   return (
     <div>
-      <div className="overflow-scroll" style={{ height: "300px" }}>
+      <div
+        className="overflow-scroll"
+        style={{ height: "300px", overflow: "hidden" }}
+      >
         {followers.map((follower, index) => {
           const { avatar_url, login, html_url } = follower;
 

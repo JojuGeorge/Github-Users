@@ -1,19 +1,20 @@
 import React from "react";
 import UserCard from "./UserCard";
 import Followers from "./Followers";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Card, Tab } from "react-bootstrap";
+import "../styles/css/user.css";
 
 function User() {
   return (
-    <div>
-      <Row>
-        <Col className="card" style={{ height: "300px" }}>
+    <div className="user-wrapper">
+      <span className="user-row">
+        <Card className="user-info-card" border="light">
           <UserCard></UserCard>
-        </Col>
-        <Col className="card" style={{ height: "300px" }}>
+        </Card>
+        <Card className="user-follower-card" border="light">
           <Followers></Followers>
-        </Col>
-      </Row>
+        </Card>
+      </span>
     </div>
   );
 }
