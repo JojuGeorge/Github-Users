@@ -60,7 +60,7 @@ const Item = ({ icon, label, value, iconColor }) => {
           <span className="info-icon-col">
             <span className={`${iconColor} fs-2 info-icons`}>{icon}</span>
           </span>
-          <span>
+          <span className="info-col">
             <h3>{value}</h3>
             <p>{label}</p>
           </span>

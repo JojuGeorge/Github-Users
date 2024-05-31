@@ -15,7 +15,7 @@
 
 .info-icon-row {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .info-icon-row .info-icon-col {
   display: grid;
@@ -26,8 +26,8 @@
 }
 .info-icon-row .info-icon-col .info-icons {
   font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -51,4 +51,17 @@
 .info-icon-yellow {
   background: #fffbea;
   color: #f0b429;
+}
+
+.info-col {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+}
+.info-col h3 {
+  margin: 0;
+}
+.info-col p {
+  margin: 0;
+  color: #808080;
 }
