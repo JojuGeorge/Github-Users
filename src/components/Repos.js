@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ExampleChart, Column2D, Pie2D, Bar2D, Doughnut2D } from "./Charts";
 import { GithubContext } from "../context/context";
 import { Row, Col } from "react-bootstrap";
+import "../styles/css/repos.css";
 
 function Repos() {
   const { repos } = useContext(GithubContext);
@@ -57,23 +58,23 @@ function Repos() {
 
   return (
     <div>
-      <section>
-        <Row>
-          <Col>
+      <section className="repo-wrapper">
+        <span className="repo-row">
+          <span className="repo-col">
             <Pie2D data={mostUsed} />
-          </Col>
-          <Col>
+          </span>
+          <span className="repo-col">
             <Column2D data={stars} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
+          </span>
+        </span>
+        <span className="repo-row">
+          <span className="repo-col">
             <Doughnut2D data={mostStars} />
-          </Col>
-          <Col>
+          </span>
+          <span className="repo-col">
             <Bar2D data={forks} />
-          </Col>
-        </Row>
+          </span>
+        </span>
       </section>
     </div>
   );
