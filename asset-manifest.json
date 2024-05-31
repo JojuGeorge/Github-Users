@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Github-Users/static/css/main.db62923b.css",
-    "main.js": "/Github-Users/static/js/main.a400cf6a.js",
+    "main.css": "/Github-Users/static/css/main.54032d01.css",
+    "main.js": "/Github-Users/static/js/main.9ba18d9b.js",
     "static/js/453.9b93ca11.chunk.js": "/Github-Users/static/js/453.9b93ca11.chunk.js",
     "static/media/login-img.svg": "/Github-Users/static/media/login-img.45d3b74fbb4ac483314eef377e006a54.svg",
     "static/media/logo.svg": "/Github-Users/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Github-Users/index.html",
-    "main.db62923b.css.map": "/Github-Users/static/css/main.db62923b.css.map",
-    "main.a400cf6a.js.map": "/Github-Users/static/js/main.a400cf6a.js.map",
+    "main.54032d01.css.map": "/Github-Users/static/css/main.54032d01.css.map",
+    "main.9ba18d9b.js.map": "/Github-Users/static/js/main.9ba18d9b.js.map",
     "453.9b93ca11.chunk.js.map": "/Github-Users/static/js/453.9b93ca11.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db62923b.css",
-    "static/js/main.a400cf6a.js"
+    "static/css/main.54032d01.css",
+    "static/js/main.9ba18d9b.js"
   ]
 }
