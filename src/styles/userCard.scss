@@ -28,4 +28,8 @@
   grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
   row-gap: 0.3rem;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
 }

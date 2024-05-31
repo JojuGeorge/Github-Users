@@ -1,0 +1,29 @@
+.overflow-scroll {
+  height: 250px;
+  overflow: hidden;
+}
+
+.follower-row {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .follower-row {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.follower-col {
+  line-height: 0.3rem;
+}
+.follower-col img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.follower-col h5 {
+  margin-top: 5px;
+}
+.follower-col a {
+  text-decoration: none;
+}

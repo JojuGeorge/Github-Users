@@ -26,3 +26,6 @@
   row-gap: 0.3rem;
   align-items: center;
 }
+.userCard-info a {
+  text-decoration: none;
+}
