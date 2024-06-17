@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GithubContext } from "../context/context";
 
 function Search() {
   const [user, setUser] = useState("");
+  let {requests, error} = useContext(GithubContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +14,12 @@ function Search() {
   return (
     <div>
       <div>
+        {
+          error.show && 
+          <div>
+            <p>{error.msg}</p>
+          </div>
+        }
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -19,9 +27,9 @@ function Search() {
             onChange={(e) => setUser(e.target.value)}
             placeholder="Enter Github User"
           />
-          <button type="submit">Search</button>
+          {requests > 0 && <button type="submit">Search</button>}
         </form>
-        <h3>requests : 60 / 60</h3>
+        <h3>requests : {requests} / 60</h3>
       </div>
     </div>
   );
