@@ -14,21 +14,24 @@ const GithubProvider = ({children})=>{
     const [repos, setRepos] = useState(mockRepos)
 
     const [requests, setRequests] = useState(0);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState({show:false, msg:""})
 
     const searchGithubUser = async(user)=>{
         // toggle error, so that after getting an error if again searched for correct user then by default error = false and msg=""
         toggleError();
-        // toto setLoading true
+        setIsLoading(true); // shows loading screen
         const response = await axios(`${rootUrl}/users/${user}`)
         .catch(err => console.log(err));
 
         if(response){
-            setGithubUser(response.data)
+            setGithubUser(response.data);
         }else{
             toggleError(true, "There is no user with that userName")
         }
+        checkRequests();
+        setIsLoading(false)
+
     }
 
     const checkRequests = ()=>{
@@ -57,7 +60,7 @@ const GithubProvider = ({children})=>{
     }, [])
 
     return (
-        <GithubContext.Provider value={{githubUser, followers, repos, requests, error, searchGithubUser}}>
+        <GithubContext.Provider value={{githubUser, followers, repos, requests, error, searchGithubUser, isLoading,}}>
             {children}
         </GithubContext.Provider>
     )
