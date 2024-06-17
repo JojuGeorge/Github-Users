@@ -17,16 +17,27 @@ const GithubProvider = ({children})=>{
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({show:false, msg:""})
 
+    const searchGithubUser = async(user)=>{
+        // toggle error, so that after getting an error if again searched for correct user then by default error = false and msg=""
+        toggleError();
+        // toto setLoading true
+        const response = await axios(`${rootUrl}/users/${user}`)
+        .catch(err => console.log(err));
+
+        if(response){
+            setGithubUser(response.data)
+        }else{
+            toggleError(true, "There is no user with that userName")
+        }
+    }
+
     const checkRequests = ()=>{
         axios
         .get(`${rootUrl}/rate_limit`)
         .then(({data}) => {
             let {rate:{remaining}} = data;
 
-            // test code
-            // remaining = 0;
             setRequests(remaining)
-            console.log(remaining)
 
             if(remaining === 0){
                 toggleError(true, "Sorry, you have exceeded your hourly rate limit!")
@@ -37,7 +48,7 @@ const GithubProvider = ({children})=>{
         })
     }
 
-    function toggleError(show, msg){
+    function toggleError(show=false, msg=''){
         setError({show,msg})
     }
 
@@ -46,7 +57,7 @@ const GithubProvider = ({children})=>{
     }, [])
 
     return (
-        <GithubContext.Provider value={{githubUser, followers, repos, requests, error}}>
+        <GithubContext.Provider value={{githubUser, followers, repos, requests, error, searchGithubUser}}>
             {children}
         </GithubContext.Provider>
     )
