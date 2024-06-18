@@ -14,7 +14,7 @@ const GithubProvider = ({children})=>{
     const [repos, setRepos] = useState(mockRepos)
 
     const [requests, setRequests] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);    // Setup in Dashboard only, below search bar
     const [error, setError] = useState({show:false, msg:""})
 
     const searchGithubUser = async(user)=>{

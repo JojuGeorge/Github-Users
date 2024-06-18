@@ -7,7 +7,7 @@ const concat = require("gulp-concat");
 function buildStyles() {
   return src("src/**/*.scss")
     .pipe(sass())
-    .pipe(flatten({ subPath: [0, -1] })) // will stip off last folder else it creates styles/css/styles/abc.css - now styles/css/abc.css
+    .pipe(flatten({ subPath: [0, -1] })) // will strip off last folder else it creates styles/css/styles/abc.css - now styles/css/abc.css
     .pipe(dest("src/styles/css"));
 }
 

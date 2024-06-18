@@ -6,7 +6,7 @@
   row-gap: 2rem;
 
   @media (max-width: 640px) {
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 

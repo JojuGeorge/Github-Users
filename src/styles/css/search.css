@@ -1,0 +1,28 @@
+.search-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 3fr 1fr;
+}
+@media (max-width: 640px) {
+  .search-wrapper {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-wrapper > span {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+}
+.search-wrapper > span button {
+  margin-left: 0.3rem;
+}
+
+.search-wrapper > h3 {
+  text-align: center;
+  color: rgb(112, 112, 112);
+}
+
+.error-msg {
+  color: rgb(218, 0, 0);
+}
