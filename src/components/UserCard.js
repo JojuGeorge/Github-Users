@@ -50,7 +50,7 @@ function UserCard() {
         <span>
           <MdLocationOn /> {location || "earth"}
         </span>
-        <a href={`https://${blog}`}>
+        <a href={`${blog}`}>
           <MdLink /> {blog}{" "}
         </a>
       </div>
