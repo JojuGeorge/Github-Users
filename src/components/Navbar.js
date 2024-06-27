@@ -11,7 +11,13 @@ function Navbar() {
     <div>
       <div>
         <button onClick={loginWithRedirect}>login</button>
-        <button onClick={()=>{logout({returnTo:window.location.origin})}}>logout</button>
+        <button  onClick={() =>
+                  logout({
+                    logoutParams: {
+                      returnTo: window.location.origin
+                    }
+                  })
+                }>logout</button>
       </div>
     </div>
   )
