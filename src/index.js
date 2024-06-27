@@ -18,7 +18,7 @@ root.render(
        domain="dev-g0piyhxgw3j5gqgn.us.auth0.com"
        clientId="g4vrvXCTmnlr1c1KpIU5A0aEpk27GVIq"
        authorizationParams={{
-         redirect_uri: window.location.origin
+         redirect_uri: `${window.location.origin}/Github-Users/#`
        }}
     >
       <HashRouter >
