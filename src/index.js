@@ -5,15 +5,28 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter} from 'react-router-dom'
 import { GithubProvider } from './context/context';
+import { Auth0Provider } from '@auth0/auth0-react';
+
+
+// Domain - dev-g0piyhxgw3j5gqgn.us.auth0.com
+// Client Id - g4vrvXCTmnlr1c1KpIU5A0aEpk27GVIq
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter >
-      <GithubProvider>
-        <App />
-      </GithubProvider>
-    </HashRouter>
+    <Auth0Provider
+       domain="dev-g0piyhxgw3j5gqgn.us.auth0.com"
+       clientId="g4vrvXCTmnlr1c1KpIU5A0aEpk27GVIq"
+       authorizationParams={{
+         redirect_uri: window.location.origin
+       }}
+    >
+      <HashRouter >
+        <GithubProvider>
+          <App />
+        </GithubProvider>
+      </HashRouter>
+    </Auth0Provider>
   </React.StrictMode>
 );
 

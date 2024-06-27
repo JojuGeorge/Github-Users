@@ -5,7 +5,8 @@
 ### Live site >> [GithubUsers.com](https://jojugeorge.github.io/Github-Users/)
 https://jojugeorge.github.io/Github-Users/
 
-
+https://jojugeorge.github.io/Github-Users/#/
+http://localhost:3000/Github-Users/#/
 
 ## Github API
 
