@@ -1,0 +1,17 @@
+.navbar-wrapper {
+    display: grid;
+    grid-template-columns: minmax(50px, 80px) auto;
+    align-items: center;
+    padding-top:1.5rem;
+
+
+    .navbar-icon{
+        height:3.5rem;
+        width:3.5rem;
+    }
+
+    span{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+}
